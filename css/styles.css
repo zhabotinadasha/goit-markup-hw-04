@@ -126,6 +126,22 @@ img {
     align-items: center;
 }
 
+.nav-link {
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: o;
+    display: block;
+    width: 100%;
+    border-radius: 2px;
+    height: 4px;
+    background-color: #404bbf;
+}
+
 .nav-list {
     display: flex;
     align-items: center;
@@ -139,6 +155,8 @@ img {
     color: #2e2f42;
     display: block;
     padding: 24px 0;
+    transition: 250ms ease-in;
+    transition-property: color;
 }
 
 .nav-link:active,
@@ -164,25 +182,30 @@ address {
 .header-adress-link {
     font-family: inherit;
     color: inherit;
+    transition: 250ms ease-in;
+    transition-property: color;
 }
 
 .header-adress-link:hover,
-.header-adress-link:active,
 .header-adress-link:focus {
     color: #404bbf;
 }
 
-.hero {
+.hero {}
+
+.hero-container {
+    max-width: 1440px;
+    width: 100%;
     background-color: #2e2f42;
     padding-top: 188px;
     padding-bottom: 188px;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+            rgba(46, 47, 66, 0.7)),
+        url(../images/people-office\ 1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
-
-/* .hero-container {
-    width: 1158px;
-    padding-right: 316px;
-    padding-left: 316px;
-} */
 
 .hero-heading {
     font-size: 56px;
@@ -211,10 +234,11 @@ address {
     border: none;
     margin-right: auto;
     margin-left: auto;
+    transition: 300ms ease-in;
+    transition-property: background-color;
 }
 
 .hero-btn:hover,
-.hero-btn:active,
 .hero-btn:focus {
     background-color: #404bbf;
 }
@@ -225,6 +249,17 @@ address {
     padding-bottom: 120px;
 }
 
+.features-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 264px;
+    height: 112px;
+    background-color: #f4f4fd;
+    border: 1px solid #8e8f99;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
 
 .features-list {
     display: flex;
@@ -276,6 +311,34 @@ address {
 
 .team-text {}
 
+.team-socials-list {
+    display: flex;
+    gap: 24px;
+    margin: 8px 16px 32px 16px;
+}
+
+.team-socials-item {
+    width: 40px;
+    height: 40px;
+    fill: white;
+}
+
+.team-socials-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #4d5ae5;
+    border-radius: 50%;
+    transition: 250ms ease-in;
+    transition-property: background-color;
+}
+
+.team-socials-link:hover {
+    background-color: #404bbf;
+}
+
 
 .portfolio {
     padding-top: 120px;
@@ -298,6 +361,38 @@ address {
     width: calc((100% - 2 * 24px) / 3);
 }
 
+.portfolio-wrapper-overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(100%);
+
+    display: flex;
+    align-items: center;
+
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #f4f4fd;
+    width: 100%;
+    height: 100%;
+    padding: 32px;
+    background-color: #4d5ae5;
+
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in;
+}
+
+.portfolio-item:hover .overlay {
+    transform: translateY(0);
+}
+
 .portfolio-wrapper {
     /* margin: 32px 172px 32px 16px; */
     padding: 32px 16px;
@@ -317,6 +412,14 @@ address {
     padding-bottom: 100px;
 }
 
+.footer-wrapper {
+    display: flex;
+}
+
+.footer-left {
+    margin-right: 120px;
+}
+
 .footer-logo {
     display: inline-block;
     margin-bottom: 16px;
@@ -325,4 +428,38 @@ address {
 .footer-text {
     color: #f4f4fd;
     max-width: 264px;
+}
+
+.footer-socials-text {
+    color: #fff;
+    font-weight: 500;
+
+}
+
+.footer-socials-list {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.footer-socials-item {
+    width: 40px;
+    height: 40px;
+    fill: white;
+}
+
+.footer-socials-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #4d5ae5;
+    border-radius: 50%;
+    transition: 250ms ease-in;
+    transition-property: background-color;
+}
+
+.footer-socials-link:hover {
+    background-color: #31d0aa;
 }
