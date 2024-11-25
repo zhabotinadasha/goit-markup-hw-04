@@ -318,6 +318,10 @@ address {
 .team-item {
     background-color: #FFFFFF;
     border-radius: 0px 0px 4px 4px;
+    box-shadow:
+        0px 1px 6px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 2px 1px rgba(46, 47, 66, 0.08);
     width: calc((100% - 3 * 24px) / 4) box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
         0px 1px 1px rgba(46, 47, 66, 0.16),
         0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -385,6 +389,14 @@ address {
 
 .portfolio-item {
     width: calc((100% - 2 * 24px) / 3);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: box-shadow;
+}
+
+.portfolio-item:hover {
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-wrapper-overlay {
@@ -457,21 +469,23 @@ address {
 }
 
 .footer-socials-text {
-    color: #fff;
+    color: #FFFFFF;
     font-weight: 500;
-
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
 }
 
 .footer-socials-list {
     display: flex;
     gap: 16px;
-    margin-top: 16px;
 }
 
 .footer-socials-item {
     width: 40px;
     height: 40px;
-    fill: white;
+    fill: #f4f4fd;
 }
 
 .footer-socials-link {
@@ -486,6 +500,7 @@ address {
     transition-property: background-color;
 }
 
-.footer-socials-link:hover {
+.footer-socials-link:hover,
+.footer-socials-link:focus {
     background-color: #31d0aa;
 }
